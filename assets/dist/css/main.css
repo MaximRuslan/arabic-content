@@ -1,0 +1,141 @@
+.border-top-line{
+border-top: 3px solid #dd4b39;
+}
+.back-white{
+background: white;
+}
+.route{
+	margin-bottom: 0px;
+	margin-left: 20px;
+}
+.favo-back{
+	background: #171b60;
+}
+.height-103{
+	height: 103px;
+}
+.logo-img{
+	width: 80% !important; 
+	float: initial;    
+	min-height: 80px;
+	margin: 0;
+}
+.width-31r{
+	width: 3.1rem !important;
+}
+
+.width-100{
+	width: 100%;
+}
+
+#import-excel-submit svg {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 0px;
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5555555;
+    padding: 3px;
+}
+#import-excel-submit{
+    position: relative;
+}
+#import-excel-submit i.hide_this {
+    /* display: none; */
+    visibility: hidden;
+    position: relative;
+}
+td.content_limit span {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 180px;
+    display: inline-block;
+    text-overflow: ellipsis; 
+}
+td.tag_limit span {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 115px;
+    display: inline-block;
+    text-overflow: ellipsis; 
+}
+
+.float-r{
+	float: right;
+}
+
+.float-l{
+	float: left;
+}
+
+.hei-auto{
+	width: 100%;
+	height: auto;
+}
+
+.color-white{
+	color:white !important;
+}
+.textarea-favo{
+	width: 100%; 
+	height: 200px; 
+	font-size: 14px; 
+	line-height: 18px; 
+	border: 1px solid #dddddd; 
+	padding: 10px;
+}
+
+.color-red{
+    color: red;
+}
+
+.badage {
+    display: inline-block;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    background: grey;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.badage.delete {
+    background-color: #e62134;
+    border-color: #e62134;
+
+}
+
+.badage.add {
+    background-color: #17a2b8;
+    ;
+    border-color: #17a2b8;
+    ;
+}
+
+.badage.update {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.f-right {
+    float: right;
+}
+
+.width-70 {
+    width: 70%;
+}
+.d-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-set{
+    font-size: 36px !important;
+    font-family: serif;
+    color: rebeccapurple;
+}
