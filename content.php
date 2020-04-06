@@ -511,7 +511,7 @@ error_reporting(E_ALL);
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="color-black"><i class="fa fa-home">Home</i></a></li>
                                 <li class="breadcrumb-item active">Content List</li>
                             </ol>
                         </div>
@@ -523,7 +523,7 @@ error_reporting(E_ALL);
             <section class="content">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
+                        <div class="card   card-primary card-outline">
                             <div class="card-header">
                                 <h3 class="card-title pull-left float-l">Filters</h3>
                                 <div class="pull-right float-r">
@@ -609,7 +609,7 @@ error_reporting(E_ALL);
             <section class="content">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
+                        <div class="card  card-primary card-outline">
                             <div class="card-header">
                                 <h3 class="card-title pull-left float-l">Content List</h3>
 
@@ -848,7 +848,11 @@ error_reporting(E_ALL);
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        <center><input type="checkbox" id="select_all" value="" />
+                                                        <center>
+                                                          <div class="icheck-primary">
+                                                                <input type="checkbox" id="select_all"  />
+                                                                <label for="select_all"></label>
+                                                            </div>
                                                         </center>
                                                     </th>
                                                     <th>Content</th>
@@ -870,8 +874,12 @@ error_reporting(E_ALL);
                           (!empty($user_privileges) && in_array(4, $user_privileges))){
                       ?>
                                                 <tr>
-                                                    <td align="center"><input type="checkbox" name="checked_id[]"
-                                                            class="checkbox" value="<?php echo $row['id']; ?>" /></td>
+                                                    <td align="center">
+                                                      <div class="icheck-primary">
+                                                            <input class="checkbox"  type="checkbox" name="checked_id[]" id="check<?php echo $row['id']; ?>"  value="<?php echo $row['id']; ?>" >
+                                                            <label for="check<?php echo $row['id']; ?>"></label>
+                                                      </div>
+                                                    </td>
                                                     <td class="content_limit">
                                                         <span><?php echo strip_tags(html_entity_decode($row['content']));?></span>
                                                     </td>

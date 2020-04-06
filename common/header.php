@@ -102,16 +102,16 @@
       </li>
 
     </ul>
-    <ol class="breadcrumb route">
-        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home">Home</i></a></li>
-        <li class="breadcrumb-item"><a href="#"><?php echo $_SESSION['pages'];?></a></li>
+    <ol class="breadcrumb route bg-white">
+        <li class="breadcrumb-item"><a href="#" class="color-black"><i class="fa fa-home">Home</i></a></li>
+        <li class="breadcrumb-item"><a href="#" class="color-black"><?php echo $_SESSION['pages'];?></a></li>
     </ol>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item dropdown">
-        <a href="logout.php">
-          <i class="btn btn-info">Logout</i>
+      <li class="nav-item dropdown" >
+        <a href="logout.php"  class="btn btn-block bg-gradient-danger">
+          <span>Log out</span>
         </a>
       </li>
     </ul> 

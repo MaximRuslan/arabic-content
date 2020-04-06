@@ -83,7 +83,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="color-black"><i class="fa fa-home">Home</i></a></li>
                                 <li class="breadcrumb-item active">Type List</li>
                             </ol>
                         </div>
@@ -95,7 +95,7 @@
             <section class="content">
                 <div class="row">
                     <div class="col-12">
-                        <div class="card">
+                        <div class="card   card-primary card-outline">
                             <div class="card-header">
                                 <h3 class="card-title pull-left float-l">Type List</h3>
 
@@ -252,7 +252,10 @@
                                                 <tr>
                                                     <th>
                                                         <center>
-                                                            <input type="checkbox" id="select_all" value="" />
+                                                            <div class="icheck-primary">
+                                                                <input type="checkbox" id="select_all"  />
+                                                                <label for="select_all"></label>
+                                                            </div>
                                                         </center>
                                                     </th>
                                                     <th>Type Name</th>
@@ -272,8 +275,12 @@
                                         (!empty($user_privileges) && in_array(4, $user_privileges))){
                             ?>
                                                 <tr>
-                                                    <td align="center"><input type="checkbox" name="checked_id[]"
-                                                            class="checkbox" value="<?php echo $row['id']; ?>" /></td>
+                                                    <td align="center">
+                                                        <div class="icheck-primary">
+                                                            <input class="checkbox"  type="checkbox" name="checked_id[]" id="check<?php echo $row['id']; ?>"  value="<?php echo $row['id']; ?>" >
+                                                            <label for="check<?php echo $row['id']; ?>"></label>
+                                                        </div>
+                                                    </td>
                                                     <td><?php echo $row['type_name'];?></td>
 
                                                     <?php 

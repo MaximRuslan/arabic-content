@@ -65,8 +65,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard </li>
+                                <li class="breadcrumb-item"><a href="#" class="color-black"><i class="fa fa-home">Home</i></a></li>
+                                <li class="breadcrumb-item active color-black">Dashboard </li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -79,86 +79,85 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3><?php echo $total_content?></h3>
 
-                                    <p>Content</p>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box callout callout-info">
+                                <span class="info-box-icon bg-info elevation-1"><a href="content.php"><i class="fas fa-cog"></i></a></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Content</span>
+                                    <span class="info-box-number">
+                                        <?php echo $total_content?>
+                                    </span>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
-                                <a href="content.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-success">
-                                <div class="inner">
-                                    <h3><?php echo $total_category?></h3>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box mb-3  callout callout-danger">
+                                <span class="info-box-icon bg-danger elevation-1"><a href="content_category.php"><i
+                                            class="fas fa-thumbs-up"></i></a></span>
 
-                                    <p>Content Category</p>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Content Category</span>
+                                    <span class="info-box-number"><?php echo $total_category?></span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa fa-list-alt"></i>
-                                </div>
-                                <a href="content_category.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?php echo $total_type?></h3>
+                        <!-- /.col -->
 
-                                    <p>Content type</p>
+                        <!-- fix for small devices only -->
+                        <div class="clearfix hidden-md-up"></div>
+
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box mb-3 callout callout-success">
+                                <span class="info-box-icon bg-success elevation-1"><a href="content_type.php"><i
+                                            class="fas fa-shopping-cart"></i></a></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Content type</span>
+                                    <span class="info-box-number"><?php echo $total_type?></span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa fa-list-alt"></i>
-                                </div>
-                                <a href="content_type.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- ./col -->
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?php echo $total_user?></h3>
-
-                                    <p>User</p>
+                        <!-- /.col -->
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box mb-3 callout callout-danger">
+                                <span class="info-box-icon bg-danger elevation-1"><a href="user.php"><i
+                                            class="fas fa-users"></i></a></span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Users</span>
+                                    <span class="info-box-number"><?php echo $total_user?></span>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="user.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
                         </div>
                         <!-- ./col -->
                         <?php if ($total_category_type > 0){
-            while($row = mysqli_fetch_assoc($result4)) { ?>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?php echo $row['total_no'] ?></h3>
-                                    <p><?php echo $row['category_name'] ?></p>
+                        while($row = mysqli_fetch_assoc($result4)) { ?>
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="info-box callout callout-warning">
+                                <span class="info-box-icon bg-warning elevation-1"><a href="content.php"><i
+                                            class="ion ion-stats-bars"></i></a></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><?php echo $row['category_name'] ?></span>
+                                    <span class="info-box-number">
+                                        <?php echo $row['total_no'] ?>
+                                    </span>
                                 </div>
-                                <div class="icon">
-                                    <i class="fa fa-list-alt"></i>
-                                </div>
-                                <a href="content.php" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
+                                <!-- /.info-box-content -->
                             </div>
+                            <!-- /.info-box -->
                         </div>
+
+
                         <?php } ?>
                         <?php } ?>
                     </div>
@@ -166,7 +165,7 @@
                     <!-- Main row -->
                     <div class="row">
                         <div class="col-12">
-                            <div class="card border-top-line">
+                            <div class="card card-primary card-outline">
                                 <div class="card-header">
                                     <h3 class="card-title pull-left float-l">Content List</h3>
 

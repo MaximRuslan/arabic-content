@@ -19,14 +19,14 @@
         <?php 
         if(isset( $_SESSION['admin_data']['img'] )){ 
           ?>
-          <img src="<?php echo $_SESSION['admin_data']['img']; ?>" class="img-circle elevation-2 width-31r" alt="User Image">
+          <img src="<?php echo $_SESSION['admin_data']['img']; ?>" class="img-circle elevation-2 width-28r">
         <?php
          } 
          ?>
         <?php
          if(empty($_SESSION['admin_data']['img'])){ 
           ?>
-          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"  class="img-circle elevation-2 width-31r" alt="User Image">
+          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"  class="img-circle elevation-2 width-28r" >
         <?php
          } 
          ?>
@@ -50,7 +50,7 @@
         <?php if($_SESSION['admin_data']['role'] == 1) { ?>
           <li class="nav-item">
             <a href="user.php" class="nav-link <?php echo $_SESSION['pages'] == 'User' ? 'active' : ''?>">
-              <i class="nav-icon fa fa-user"></i>
+              <i class="nav-icon fa fa-users"></i>
               <p>
                 User
               </p>

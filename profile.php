@@ -19,90 +19,87 @@
         $username=mysqli_real_escape_string($conn,$_POST['username']);
         $email=mysqli_real_escape_string($conn,$_POST['email']);
 
-        $target_dir = "upload/";
-        $target_file = $target_dir.$current_time.basename($_FILES["user_img"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-
-        $check = getimagesize($_FILES["user_img"]["tmp_name"]);
-        $error_msg="";
-        if($check !== false) {
-            echo "File is an image - " . $check["mime"] . ".";
+        // echo $_FILES["user_img"]["name"]; exit;
+        if($_FILES["user_img"]["name"] != ""){
+            $target_dir = "upload/";
+            $target_file = $target_dir.$current_time.basename($_FILES["user_img"]["name"]);
             $uploadOk = 1;
-        } else {
-            $error_msg="File is not an image.";
-            $uploadOk = 0;
-        }
-       
-        if (file_exists($target_file)) {
-            $error_msg="Sorry, image already exists.";
-            $uploadOk = 0;
-        }
-       
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            // Check if image file is a actual image or fake image
 
-        // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-        && $imageFileType != "gif" ) {
-            $error_msg="Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-            $uploadOk = 0;
-        }
-
-
-
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            $error_msg="Sorry, your image was not uploaded.";
-        // if everything is ok, try to upload file
-        } else {
-            if (move_uploaded_file($_FILES["user_img"]["tmp_name"], $target_file)) {
-                echo "The file ". basename( $_FILES["user_img"]["name"]). " has been uploaded.";
+            $check = getimagesize($_FILES["user_img"]["tmp_name"]);
+            $error_msg="";
+            if($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
             } else {
-                echo "Sorry, there was an error uploading your image.";
+                $error_msg="File is not an image.";
+                $uploadOk = 0;
             }
-        }
+           
+            if (file_exists($target_file)) {
+                $error_msg="Sorry, image already exists.";
+                $uploadOk = 0;
+            }
+           
+
+            // Allow certain file formats
+            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            && $imageFileType != "gif" ) {
+                $error_msg="Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                $uploadOk = 0;
+            }
 
 
 
-        if(!empty($_POST['password']))
-        {
-          $password=mysqli_real_escape_string($conn,$_POST['password']);
-          $sql = "UPDATE tbl_user 
-                SET username='".$_POST['username']."',email='".$_POST['email']."',img='".$target_file."',password='".$password."'
-                WHERE id='".$_POST['user_id']."'";
-        } else {
-             $sql = "UPDATE tbl_user 
-                    SET username='".$_POST['username']."',email='".$_POST['email']."',img='".$target_file."'
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                $error_msg="Sorry, your image was not uploaded.";
+            // if everything is ok, try to upload file
+            } else {
+                if (move_uploaded_file($_FILES["user_img"]["tmp_name"], $target_file)) {
+                    echo "The file ". basename( $_FILES["user_img"]["name"]). " has been uploaded.";
+                } else {
+                    echo "Sorry, there was an error uploading your image.";
+                }
+            }
+
+            if(!empty($_POST['password']))
+            {
+              $password=mysqli_real_escape_string($conn,$_POST['password']);
+              $sql = "UPDATE tbl_user 
+                    SET username='".$_POST['username']."',email='".$_POST['email']."',img='".$target_file."',password='".$password."'
                     WHERE id='".$_POST['user_id']."'";
-        }
-
-        
-
-        $user_id=$_POST['user_id'];
-
-
-        if($uploadOk == 1){
-            if (mysqli_query($conn, $sql)) {
-                $sql = "SELECT *  FROM tbl_user WHERE id = '$user_id'";
-                $result = mysqli_query($conn,$sql);
-                $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-                $_SESSION["admin_data"] = $row;
-                $_SESSION['update_success'] = true;
-                header("location: profile.php");
-                die;
+            } else {
+                 $sql = "UPDATE tbl_user 
+                        SET username='".$_POST['username']."',email='".$_POST['email']."',img='".$target_file."'
+                        WHERE id='".$_POST['user_id']."'";
             }
         }else{
+            if(!empty($_POST['password']))
+            {
+              $password=mysqli_real_escape_string($conn,$_POST['password']);
+              $sql = "UPDATE tbl_user 
+                    SET username='".$_POST['username']."',email='".$_POST['email']."',password='".$password."'
+                    WHERE id='".$_POST['user_id']."'";
+            } else {
+                 $sql = "UPDATE tbl_user 
+                        SET username='".$_POST['username']."',email='".$_POST['email']."'
+                        WHERE id='".$_POST['user_id']."'";
+            }
+        }
 
+        $user_id=$_POST['user_id'];
+        if (mysqli_query($conn, $sql)) {
             $sql = "SELECT *  FROM tbl_user WHERE id = '$user_id'";
             $result = mysqli_query($conn,$sql);
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
             $_SESSION["admin_data"] = $row;
-            $_SESSION['update_faild'] = true;
-            $_SESSION['error_msg']=$error_msg;     
-
+            $_SESSION['update_success'] = true;
             header("location: profile.php");
             die;
         }
+
 
         
     }
@@ -180,7 +177,7 @@
         <?php require_once('common/leftmenu.php');?>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper back-white">
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
@@ -190,7 +187,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#" class="color-black"><i class="fa fa-home">Home</i></a></li>
                                 <li class="breadcrumb-item active">User Profile</li>
                             </ol>
                         </div>
@@ -209,7 +206,7 @@
                         <div class="row">
 
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION['admin_data']['id']; ?>">
-                            <div class="col-sm-2 d-center">
+                            <div class="col-sm-4 d-center">
                                 <div class="text-center">
                                     <?php 
                                     if(isset( $_SESSION['admin_data']['img'] )){ 
@@ -234,9 +231,8 @@
                                 <hr>
                             </div>
                             <!--/col-3-->
-                            <div class="col-sm-1"></div>
 
-                            <div class="col-sm-9">
+                            <div class="col-sm-8">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="home">
                                         <!-- <hr> -->

@@ -20,8 +20,8 @@ background: white;
 	min-height: 80px;
 	margin: 0;
 }
-.width-31r{
-	width: 3.1rem !important;
+.width-28r{
+	width: 2.8rem !important;
 }
 
 .width-100{
@@ -73,6 +73,10 @@ td.tag_limit span {
 .hei-auto{
 	width: 100%;
 	height: auto;
+}
+
+.color-black{
+    color:#343a40 !important;
 }
 
 .color-white{
