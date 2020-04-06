@@ -19,14 +19,14 @@
         <?php 
         if(isset( $_SESSION['admin_data']['img'] )){ 
           ?>
-          <img src="<?php echo $_SESSION['admin_data']['img']; ?>" class="img-circle elevation-2 width-28r">
+          <img src="<?php echo $_SESSION['admin_data']['img']; ?>" class="logo-circle-small elevation-2 width-28r">
         <?php
          } 
          ?>
         <?php
          if(empty($_SESSION['admin_data']['img'])){ 
           ?>
-          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"  class="img-circle elevation-2 width-28r" >
+          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"  class="logo-circle-small elevation-2 width-28r" >
         <?php
          } 
          ?>

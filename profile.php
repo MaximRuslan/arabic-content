@@ -212,7 +212,7 @@
                                     if(isset( $_SESSION['admin_data']['img'] )){ 
                                       ?>
                                     <img src="<?php echo $_SESSION['admin_data']['img']; ?>"
-                                        class="width-70 avatar img-circle img-thumbnail" alt="avatar">
+                                        class="width-70 avatar logo-circle img-thumbnail" alt="avatar">
                                     <?php
                                      } 
                                      ?>
@@ -220,7 +220,7 @@
                                      if(empty($_SESSION['admin_data']['img'])){ 
                                       ?>
                                     <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
-                                        class="width-70 avatar img-circle img-thumbnail" alt="avatar">
+                                        class="width-70 avatar logo-circle img-thumbnail" alt="avatar">
                                     <?php
                                      } 
                                      ?>

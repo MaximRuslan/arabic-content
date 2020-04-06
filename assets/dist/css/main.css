@@ -143,3 +143,19 @@ td.tag_limit span {
     font-family: serif;
     color: rebeccapurple;
 }
+.logo-circle{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.logo-circle-small{
+    display: inline-block;
+    position: relative;
+    width: 2rem !important;
+    height: 2rem !important;
+    overflow: hidden;
+    border-radius: 50%;
+}
