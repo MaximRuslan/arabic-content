@@ -325,7 +325,6 @@
                                                                 <input type="checkbox" id="select_all"  />
                                                                 <label for="select_all"></label>
                                                             </div>
-                                                        <!-- <input type="checkbox" id="select_all" value="" /> -->
                                                         </center>
                                                     </th>
                                                     <th>User Name</th>
@@ -351,7 +350,7 @@
                                                     
                                                     <td align="center">
                                                         <div class="icheck-primary">
-                                                            <input class="checkbox"  type="checkbox" name="checked_id[]" id="check<?php echo $row['id']; ?>"  value="<?php echo $row['id']; ?>" >
+                                                            <input class="checkbox check-table"  type="checkbox" name="checked_id[]" id="check<?php echo $row['id']; ?>"  value="<?php echo $row['id']; ?>" >
                                                             <label for="check<?php echo $row['id']; ?>"></label>
                                                         </div>
                                                  <!--    <input type="checkbox" name="checked_id[]"
@@ -597,8 +596,9 @@
             }
         });
 
-        $('.checkbox').on('click', function() {
-            if ($('.checkbox:checked').length == $('.checkbox').length) {
+        $('.check-table').on('click', function() {
+            console.log($('.check-table:checked').length, ":::", $('.check-table').length )
+            if ($('.check-table:checked').length == $('.check-table').length) {
                 $('#select_all').prop('checked', true);
             } else {
                 $('#select_all').prop('checked', false);
